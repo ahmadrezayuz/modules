@@ -1,7 +1,7 @@
 /* persian city and towns list
-	city_id : default indicator
-	city_title : title
-	city_parent : city parent
+	id : default indicator
+	title : title
+	parent_id : city parent
 */
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -10,15 +10,15 @@
 /*!40101 SET NAMES utf8mb4 */;
 
 
-CREATE TABLE `city_table` (
-  `city_id` int(11) NOT NULL,
-  `city_title` varchar(150) NOT NULL,
-  `city_parent` int(11) NOT NULL
+CREATE TABLE `cities` (
+  `id` int(11) NOT NULL,
+  `title` varchar(150) NOT NULL,
+  `parent_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 
-INSERT INTO `city_table` (`city_id`, `city_title`, `city_parent`) VALUES
+INSERT INTO `cities` (`id`, `title`, `parent_id`) VALUES
 (1, 'آذربایجان شرقی', 0),
 (2, 'آذربایجان غربی', 0),
 (3, 'اردبیل', 0),
@@ -1302,20 +1302,20 @@ INSERT INTO `city_table` (`city_id`, `city_title`, `city_parent`) VALUES
 --
 
 --
--- Indexes for table `city_table`
+-- Indexes for table `cities`
 --
-ALTER TABLE `city_table`
-  ADD PRIMARY KEY (`city_id`);
+ALTER TABLE `cities`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `city_table`
+-- AUTO_INCREMENT for table `cities`
 --
-ALTER TABLE `city_table`
-  MODIFY `city_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1278;
+ALTER TABLE `cities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1278;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
